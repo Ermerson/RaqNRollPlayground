@@ -1,0 +1,92 @@
+﻿### Financial API - Test Requests
+### Base URL: http://localhost:5000
+
+### ============================================
+### 1. Obter Sumário de Despesas
+### Retorna despesas agrupadas por categoria para um período específico
+### ============================================
+GET http://localhost:5000/api/financialsummary/outcomes/2026-04 HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### 2. Obter Sumário de Receitas
+### Retorna receitas agrupadas por categoria para um período específico
+### ============================================
+GET http://localhost:5000/api/financialsummary/incomes/2026-04 HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### 3. Obter Relatório Financeiro Completo
+### Retorna receitas, despesas e sumário para um período
+### ============================================
+GET http://localhost:5000/api/financialsummary/report/2026-04 HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### 4. Obter Sumário do Mês Atual
+### Retorna o sumário financeiro do mês atual (automático)
+### ============================================
+GET http://localhost:5000/api/financialsummary/current-month HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### TESTES ADICIONAIS COM DIFERENTES PERÍODOS
+### ============================================
+
+### Testar com período diferente (substitua o mês conforme necessário)
+GET http://localhost:5000/api/financialsummary/outcomes/2026-03 HTTP/1.1
+Accept: application/json
+
+###
+
+### Testar com período futuro
+GET http://localhost:5000/api/financialsummary/incomes/2026-05 HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### TESTES DE ERRO (validação)
+### ============================================
+
+### Teste com período inválido (deve retornar 400)
+GET http://localhost:5000/api/financialsummary/outcomes/invalid HTTP/1.1
+Accept: application/json
+
+###
+
+### Teste com formato de data errado (deve retornar 400)
+GET http://localhost:5000/api/financialsummary/outcomes/04-2026 HTTP/1.1
+Accept: application/json
+
+###
+
+### ============================================
+### EXEMPLOS COM VARIÁVEIS (Usar no Rider/VSCode)
+### Descomente para usar variáveis
+### ============================================
+
+# @baseUrl = http://localhost:5000
+# @period = 2026-04
+
+# GET {{baseUrl}}/api/financialsummary/outcomes/{{period}}
+# Accept: application/json
+
+# ###
+
+# GET {{baseUrl}}/api/financialsummary/incomes/{{period}}
+# Accept: application/json
+
+# ###
+
+# GET {{baseUrl}}/api/financialsummary/report/{{period}}
+# Accept: application/json
+

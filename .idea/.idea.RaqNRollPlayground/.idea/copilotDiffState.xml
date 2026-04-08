@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="/Program (snapshot).cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="/Program (snapshot).cs" />
+              <option name="originalContent" value="using RaqNRollPlayground.Infra.Configuration;&#10;using RaqNRollPlayground.Infra.Context;&#10;using RaqNRollPlayground.Infra.Seeders;&#10;&#10;var builder = WebApplication.CreateBuilder(args);&#10;&#10;builder.Services.AddControllers();&#10;builder.Services.AddOpenApi();&#10;builder.Services.AddFinancialContext(builder.Configuration);&#10;builder.Services.AddInfrastructureServices();&#10;&#10;var app = builder.Build();&#10;&#10;// Aplicar migrações pendentes ao banco de dados&#10;using (var scope = app.Services.CreateScope())&#10;{&#10;    var context = scope.ServiceProvider.GetRequiredService&lt;FinancialContext&gt;();&#10;    context.Database.Migrate();&#10;    &#10;    // Aplicar seeding ao banco de dados&#10;    DatabaseSeeder.Seed(context);&#10;}&#10;&#10;if (app.Environment.IsDevelopment())&#10;{&#10;    app.MapOpenApi();&#10;}&#10;&#10;app.UseAuthorization();&#10;&#10;app.MapControllers();&#10;&#10;app.Run();" />
+              <option name="updatedContent" value="using Microsoft.EntityFrameworkCore;&#10;using RaqNRollPlayground.Infra.Configuration;&#10;using RaqNRollPlayground.Infra.Context;&#10;using RaqNRollPlayground.Infra.Seeders;&#10;&#10;var builder = WebApplication.CreateBuilder(args);&#10;&#10;builder.Services.AddControllers();&#10;builder.Services.AddOpenApi();&#10;builder.Services.AddFinancialContext(builder.Configuration);&#10;builder.Services.AddInfrastructureServices();&#10;&#10;var app = builder.Build();&#10;&#10;// Aplicar migrações pendentes ao banco de dados&#10;using (var scope = app.Services.CreateScope())&#10;{&#10;    var context = scope.ServiceProvider.GetRequiredService&lt;FinancialContext&gt;();&#10;    context.Database.Migrate();&#10;    &#10;    // Aplicar seeding ao banco de dados&#10;    DatabaseSeeder.Seed(context);&#10;}&#10;&#10;if (app.Environment.IsDevelopment())&#10;{&#10;    app.MapOpenApi();&#10;}&#10;&#10;app.UseAuthorization();&#10;&#10;app.MapControllers();&#10;&#10;app.Run();" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

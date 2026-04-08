@@ -1,0 +1,19 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  api:
+    build:
+      context: "D:\\Projects\\Dotnet\\RaqNRollPlayground"
+      dockerfile: "Dockerfile"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/RaqNRollPlayground.WebApi.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "raqnrollplayground.webapi:dev"
+    ports: []
+    volumes:
+    - "D:\\Projects\\Dotnet\\RaqNRollPlayground\\src\\RaqNRollPlayground.WebApi:/app:rw"
+    - "D:\\Projects\\Dotnet\\RaqNRollPlayground:/src:rw"
+    - "C:\\Users\\ermer\\.nuget\\packages:/root/.nuget/packages"
+    working_dir: "/app"

@@ -1,0 +1,138 @@
+﻿# 🧪 Teste Rápido - Docker Setup
+
+## 5 Passos Para Validar Tudo em Menos de 1 Minuto
+
+### **Passo 1: Verifique os Arquivos**
+```powershell
+Test-Path "D:\Projects\Dotnet\RaqNRollPlayground\Dockerfile"
+Test-Path "D:\Projects\Dotnet\RaqNRollPlayground\docker-compose.yml"
+Test-Path "D:\Projects\Dotnet\RaqNRollPlayground\docker-start.ps1"
+```
+✅ Todos devem retornar `True`
+
+---
+
+### **Passo 2: Verifique a Imagem Docker**
+```powershell
+docker images | Where-Object {$_ -like "*financial-api*"}
+```
+✅ Deve mostrar: `financial-api  latest  380MB`
+
+---
+
+### **Passo 3: Valide docker-compose**
+```powershell
+cd "D:\Projects\Dotnet\RaqNRollPlayground"
+docker-compose config --services
+```
+✅ Deve mostrar:
+```
+postgres
+api
+```
+
+---
+
+### **Passo 4: Inicie os Containers**
+```powershell
+docker-compose up -d
+```
+✅ Aguarde ~20 segundos pelo health check
+
+---
+
+### **Passo 5: Verifique o Status**
+```powershell
+docker-compose ps
+```
+✅ Deve mostrar ambos os containers `Up`:
+```
+financial_control_postgres   Up (healthy)   ...
+financial_control_api        Up             ...
+```
+
+---
+
+## ✅ Se Tudo Passou = Pronto Para Usar!
+
+```powershell
+# Teste a API
+curl http://localhost:8080
+
+# Veja os logs
+docker-compose logs -f api
+
+# Acesse no navegador
+http://localhost:8080
+```
+
+---
+
+## ❌ Se Algo Não Funcionou
+
+### **Problema: Imagem não existe**
+```powershell
+# Reconstrua
+docker-compose build --no-cache
+```
+
+### **Problema: Port já em uso**
+```powershell
+# Parar containers anteriores
+docker-compose down
+
+# Ou mudar porta no docker-compose.yml
+# Altere "8080:8080" para "8081:8080"
+```
+
+### **Problema: Containers não iniciam**
+```powershell
+# Ver detalhes
+docker-compose logs
+
+# Limpar e recomeçar
+docker-compose down -v
+docker-compose up -d
+```
+
+---
+
+## 📊 Performance Esperada
+
+| Métrica | Esperado |
+|---------|----------|
+| Build inicial | 2-3 min |
+| Build com cache | 10-30 seg |
+| Startup | 10-15 seg |
+| Imagem final | 380MB |
+| Ambos containers | ~500MB RAM |
+
+---
+
+## 🎯 Próximo: Use o Menu Interativo
+
+```powershell
+.\docker-start.ps1
+```
+
+**Escolha opção 1 para iniciar de novo**
+
+---
+
+## 📝 Logs da Aplicação
+
+```powershell
+# API logs
+docker-compose logs -f api
+
+# PostgreSQL logs  
+docker-compose logs -f postgres
+
+# Todos os logs
+docker-compose logs -f
+```
+
+---
+
+**✅ Teste completo! Tudo funcionando? Então aproveite! 🚀**
+

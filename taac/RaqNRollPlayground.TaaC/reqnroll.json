@@ -1,0 +1,19 @@
+﻿{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+
+  "bindingAssemblies": [
+  ],
+  
+  "trace": {
+    "traceSuccessfulSteps": true,
+    "traceTimings": true,
+    "minTracedDurationMs": 0
+  },
+  
+  "formatters": {
+    "html" : { "outputFilePath" : "reports\\" },
+    "message" : { "outputFilePath" : "reports\\" }
+  },
+  
+  "stepAssembly": "RaqNRollPlayground.TaaC"
+}

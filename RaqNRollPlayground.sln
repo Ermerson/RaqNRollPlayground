@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{4C535693-9A79-422D-BE80-3D45458A0925}"
+	ProjectSection(SolutionItems) = preProject
+		.env = .env
+		docker-compose.full.yml = docker-compose.full.yml
+		docker-compose.yml = docker-compose.yml
+		init-db.sql = init-db.sql
+		FinancialAPI.http = FinancialAPI.http
+		FinancialAPI-Variables.http = FinancialAPI-Variables.http
+		Dockerfile = Dockerfile
+		docker-start.ps1 = docker-start.ps1
+		docker-start.sh = docker-start.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{E7B67B8A-BE7B-4998-9290-F47C543CADAD}"
+	ProjectSection(SolutionItems) = preProject
+		docs\API_ENDPOINTS.md = docs\API_ENDPOINTS.md
+		docs\DOCKER_SETUP.md = docs\DOCKER_SETUP.md
+		docs\HTTP_FILE_GUIDE.md = docs\HTTP_FILE_GUIDE.md
+		docs\HTTP_FILES_SUMMARY.md = docs\HTTP_FILES_SUMMARY.md
+		docs\IMPLEMENTATION_SUMMARY.md = docs\IMPLEMENTATION_SUMMARY.md
+		docs\MIGRATIONS_RESOLUTION.md = docs\MIGRATIONS_RESOLUTION.md
+		docs\QUICK_TEST.md = docs\QUICK_TEST.md
+		docs\README.md = docs\README.md
+		docs\SEEDED_DATA.md = docs\SEEDED_DATA.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "taac", "taac", "{E3CFC650-7F03-4D5A-AF36-D20677FDD551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaqNRollPlayground.TaaC", "taac\RaqNRollPlayground.TaaC\RaqNRollPlayground.TaaC.csproj", "{0CF02E09-7DD0-493F-A3F8-74A6560ED821}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EDB98445-501E-48DE-B91F-5DC86F32734A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaqNRollPlayground.Infra", "src\RaqNRollPlayground.Infra\RaqNRollPlayground.Infra.csproj", "{2A8F98EC-0190-483A-9041-E1BC2CB8258E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaqNRollPlayground.WebApi", "src\RaqNRollPlayground.WebApi\RaqNRollPlayground.WebApi.csproj", "{8759CCE8-171F-49D6-A43E-63EEDF396C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReqNRollPlayground.Domain", "src\ReqNRollPlayground.Domain\ReqNRollPlayground.Domain.csproj", "{5D78D837-1945-4D13-A291-7F246176CDCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CF02E09-7DD0-493F-A3F8-74A6560ED821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF02E09-7DD0-493F-A3F8-74A6560ED821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF02E09-7DD0-493F-A3F8-74A6560ED821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF02E09-7DD0-493F-A3F8-74A6560ED821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8F98EC-0190-483A-9041-E1BC2CB8258E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8F98EC-0190-483A-9041-E1BC2CB8258E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8F98EC-0190-483A-9041-E1BC2CB8258E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8F98EC-0190-483A-9041-E1BC2CB8258E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8759CCE8-171F-49D6-A43E-63EEDF396C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8759CCE8-171F-49D6-A43E-63EEDF396C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8759CCE8-171F-49D6-A43E-63EEDF396C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8759CCE8-171F-49D6-A43E-63EEDF396C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D78D837-1945-4D13-A291-7F246176CDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D78D837-1945-4D13-A291-7F246176CDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D78D837-1945-4D13-A291-7F246176CDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D78D837-1945-4D13-A291-7F246176CDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7B67B8A-BE7B-4998-9290-F47C543CADAD} = {4C535693-9A79-422D-BE80-3D45458A0925}
+		{0CF02E09-7DD0-493F-A3F8-74A6560ED821} = {E3CFC650-7F03-4D5A-AF36-D20677FDD551}
+		{2A8F98EC-0190-483A-9041-E1BC2CB8258E} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
+		{8759CCE8-171F-49D6-A43E-63EEDF396C01} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
+		{5D78D837-1945-4D13-A291-7F246176CDCB} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
+	EndGlobalSection
+EndGlobal

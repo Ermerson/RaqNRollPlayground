@@ -1,0 +1,194 @@
+﻿### Financial API - Test Requests (Com Variáveis)
+### ================================================
+
+### Configuração de Variáveis
+@baseUrl = http://localhost:5000
+@contentType = application/json
+@period = 2026-04
+@periodPrev = 2026-03
+@periodNext = 2026-05
+
+### ================================================
+### ENDPOINTS PRINCIPAIS
+### ================================================
+
+### 1️⃣ Obter Sumário de Despesas do Período
+# Retorna despesas agrupadas por categoria
+GET {{baseUrl}}/api/financialsummary/outcomes/{{period}}
+Accept: {{contentType}}
+
+###
+
+### 2️⃣ Obter Sumário de Receitas do Período
+# Retorna receitas agrupadas por categoria
+GET {{baseUrl}}/api/financialsummary/incomes/{{period}}
+Accept: {{contentType}}
+
+###
+
+### 3️⃣ Obter Relatório Financeiro Completo
+# Retorna receitas, despesas e sumário combinado
+GET {{baseUrl}}/api/financialsummary/report/{{period}}
+Accept: {{contentType}}
+
+###
+
+### 4️⃣ Obter Sumário do Mês Atual
+# Retorna o sumário financeiro do mês atual automaticamente
+GET {{baseUrl}}/api/financialsummary/current-month
+Accept: {{contentType}}
+
+### ================================================
+### TESTES COM MÚLTIPLOS PERÍODOS
+### ================================================
+
+### Despesas do Mês Anterior
+GET {{baseUrl}}/api/financialsummary/outcomes/{{periodPrev}}
+Accept: {{contentType}}
+
+###
+
+### Despesas do Próximo Mês
+GET {{baseUrl}}/api/financialsummary/outcomes/{{periodNext}}
+Accept: {{contentType}}
+
+###
+
+### Receitas do Período Anterior
+GET {{baseUrl}}/api/financialsummary/incomes/{{periodPrev}}
+Accept: {{contentType}}
+
+###
+
+### Relatório do Período Anterior
+GET {{baseUrl}}/api/financialsummary/report/{{periodPrev}}
+Accept: {{contentType}}
+
+### ================================================
+### TESTES DE VALIDAÇÃO (Devem Retornar 400)
+### ================================================
+
+### ❌ Teste com Período Inválido
+GET {{baseUrl}}/api/financialsummary/outcomes/invalid
+Accept: {{contentType}}
+
+###
+
+### ❌ Teste com Formato de Data Errado
+GET {{baseUrl}}/api/financialsummary/outcomes/04-2026
+Accept: {{contentType}}
+
+###
+
+### ❌ Teste com Período Vazio
+GET {{baseUrl}}/api/financialsummary/outcomes/
+Accept: {{contentType}}
+
+### ================================================
+### TESTES DE PERÍODOS ESPECÍFICOS
+### ================================================
+
+### Despesas de Janeiro 2026
+GET {{baseUrl}}/api/financialsummary/outcomes/2026-01
+Accept: {{contentType}}
+
+###
+
+### Receitas de Fevereiro 2026
+GET {{baseUrl}}/api/financialsummary/incomes/2026-02
+Accept: {{contentType}}
+
+###
+
+### Relatório de Dezembro 2025
+GET {{baseUrl}}/api/financialsummary/report/2025-12
+Accept: {{contentType}}
+
+### ================================================
+### TESTES DE PERFORMANCE (Múltiplas Requisições)
+### ================================================
+
+### Todas as Despesas - Rapidamente
+GET {{baseUrl}}/api/financialsummary/outcomes/{{period}}
+Accept: {{contentType}}
+
+###
+
+### Todas as Receitas - Rapidamente
+GET {{baseUrl}}/api/financialsummary/incomes/{{period}}
+Accept: {{contentType}}
+
+###
+
+### Relatório Completo
+GET {{baseUrl}}/api/financialsummary/report/{{period}}
+Accept: {{contentType}}
+
+###
+
+### Mês Atual - Última Verificação
+GET {{baseUrl}}/api/financialsummary/current-month
+Accept: {{contentType}}
+
+### ================================================
+### INSTRUÇÕES DE USO
+### ================================================
+
+# Para usar este arquivo:
+#
+# 1. Rider (JetBrains):
+#    - Abra o arquivo
+#    - Clique no ícone ▶️ verde para executar requisições
+#    - Veja a resposta no painel à direita
+#
+# 2. VSCode:
+#    - Instale extensão "REST Client" (Huachao Mao)
+#    - Clique em "Send Request"
+#    - Veja a resposta na aba "REST Client"
+#
+# 3. Para mudar variáveis:
+#    - Edite os valores acima
+#    - @baseUrl, @period, etc.
+#    - As mudanças aplicam a todas as requisições
+#
+# 4. Executar múltiplas requisições:
+#    - Use Ctrl+Shift+Enter (Rider) ou Shift+Alt+R (VSCode)
+#    - Ou execute uma por uma
+
+### ================================================
+### EXEMPLOS DE RESPOSTA
+### ================================================
+
+# GET http://localhost:5000/api/financialsummary/current-month
+# 
+# Response 200:
+# {
+#   "period": "2026-04",
+#   "totalIncome": 7550.00,
+#   "totalOutcome": 2694.80,
+#   "netBalance": 4855.20,
+#   "startDate": "2026-04-01T00:00:00Z",
+#   "endDate": "2026-04-30T23:59:59Z"
+# }
+
+### ================================================
+### DICAS PRÁTICAS
+### ================================================
+
+# Dica 1: Mudar período rapidamente
+#   - Edite @period = 2026-XX
+#   - Todas as requisições usarão o novo período
+
+# Dica 2: Testar um mês inteiro
+#   - Copie uma requisição
+#   - Cole 12 vezes
+#   - Mude @period para cada mês (01 a 12)
+
+# Dica 3: Adicionar Headers
+#   - Adicione mais linhas antes de "Accept:"
+#   - Exemplo: "Authorization: Bearer seu-token"
+
+# Dica 4: Salvar Favoritos
+#   - Marque requisições com estrela (Rider)
+#   - Use comentários para organizar (VSCode)
+
