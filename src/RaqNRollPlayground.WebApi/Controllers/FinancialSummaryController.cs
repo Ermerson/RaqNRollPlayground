@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReqNRollPlayground.Domain.DTOs;
+using ReqNRollPlayground.Domain.RequestContext;
 using ReqNRollPlayground.Domain.Services;
 
 namespace RaqNRollPlayground.Controllers;
@@ -24,6 +25,7 @@ public class FinancialSummaryController : ControllerBase
     /// <param name="period">Período no formato "yyyy-MM" (ex: 2026-04)</param>
     /// <returns>Sumário de despesas agrupadas por categoria</returns>
     [HttpGet("outcomes/{period}")]
+    [RequestContextSource( "outcomes")]
     public async Task<ActionResult<OutcomeSummaryReportDto>> GetOutcomeSummary(string period)
     {
         if (!IsValidPeriod(period))

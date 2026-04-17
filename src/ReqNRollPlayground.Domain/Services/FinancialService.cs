@@ -1,5 +1,6 @@
 ﻿using ReqNRollPlayground.Domain.DTOs;
 using ReqNRollPlayground.Domain.Entity;
+using ReqNRollPlayground.Domain.RequestContext;
 
 namespace ReqNRollPlayground.Domain.Services;
 
@@ -35,14 +36,19 @@ public interface IFinancialService
 public class FinancialService : IFinancialService
 {
     private readonly IFinancialRepository _repository;
-
-    public FinancialService(IFinancialRepository repository)
+    private readonly IRequestContext _requestContext;
+    
+    public FinancialService(IFinancialRepository repository, IRequestContext requestContext)
     {
         _repository = repository;
+        _requestContext = requestContext;
     }
 
     public async Task<OutcomeSummaryReportDto> GetOutcomeSummaryAsync(string period)
     {
+        
+        var periodContext = _requestContext.Period;
+        
         var outcomes = await _repository.GetOutcomesByPeriodAsync(period);
 
         if (!outcomes.Any())

@@ -2,11 +2,14 @@ using Microsoft.EntityFrameworkCore;
 using RaqNRollPlayground.Infra.Configuration;
 using RaqNRollPlayground.Infra.Context;
 using RaqNRollPlayground.Infra.Seeders;
+using RaqNRollPlayground.Middlewares;
+using ReqNRollPlayground.Domain.RequestContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddRequestContext();
 builder.Services.AddFinancialContext(builder.Configuration);
 builder.Services.AddInfrastructureServices();
 
@@ -28,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
+app.UseMiddleware<RequestContextMiddleware>();
 
 app.MapControllers();
 
