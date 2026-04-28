@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 		Dockerfile = Dockerfile
 		docker-start.ps1 = docker-start.ps1
 		docker-start.sh = docker-start.sh
+		.dockerignore = .dockerignore
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{E7B67B8A-BE7B-4998-9290-F47C543CADAD}"
@@ -37,6 +38,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaqNRollPlayground.WebApi", "src\RaqNRollPlayground.WebApi\RaqNRollPlayground.WebApi.csproj", "{8759CCE8-171F-49D6-A43E-63EEDF396C01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReqNRollPlayground.Domain", "src\ReqNRollPlayground.Domain\ReqNRollPlayground.Domain.csproj", "{5D78D837-1945-4D13-A291-7F246176CDCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".devcontainer", ".devcontainer", "{93A2E541-94E2-498E-93FD-A8114C7C0094}"
+	ProjectSection(SolutionItems) = preProject
+		.devcontainer\devcontainer.json = .devcontainer\devcontainer.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,5 +73,6 @@ Global
 		{2A8F98EC-0190-483A-9041-E1BC2CB8258E} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
 		{8759CCE8-171F-49D6-A43E-63EEDF396C01} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
 		{5D78D837-1945-4D13-A291-7F246176CDCB} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
+		{93A2E541-94E2-498E-93FD-A8114C7C0094} = {4C535693-9A79-422D-BE80-3D45458A0925}
 	EndGlobalSection
 EndGlobal
