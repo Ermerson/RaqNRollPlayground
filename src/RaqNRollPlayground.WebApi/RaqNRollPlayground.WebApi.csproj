@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RaqNRollPlayground.Infra\RaqNRollPlayground.Infra.csproj" />
+      <ProjectReference Include="..\RaqNRollPlaygroung.WideEvent\RaqNRollPlaygroung.WideEvent.csproj" />
       <ProjectReference Include="..\ReqNRollPlayground.Domain\ReqNRollPlayground.Domain.csproj" />
     </ItemGroup>
 

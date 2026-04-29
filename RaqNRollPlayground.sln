@@ -44,6 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".devcontainer", ".devcontai
 		.devcontainer\devcontainer.json = .devcontainer\devcontainer.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaqNRollPlaygroung.WideEvent", "src\RaqNRollPlaygroung.WideEvent\RaqNRollPlaygroung.WideEvent.csproj", "{739CCA69-207B-4305-88E4-C75D0C285C6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{5D78D837-1945-4D13-A291-7F246176CDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D78D837-1945-4D13-A291-7F246176CDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D78D837-1945-4D13-A291-7F246176CDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739CCA69-207B-4305-88E4-C75D0C285C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739CCA69-207B-4305-88E4-C75D0C285C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739CCA69-207B-4305-88E4-C75D0C285C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739CCA69-207B-4305-88E4-C75D0C285C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7B67B8A-BE7B-4998-9290-F47C543CADAD} = {4C535693-9A79-422D-BE80-3D45458A0925}
@@ -74,5 +80,6 @@ Global
 		{8759CCE8-171F-49D6-A43E-63EEDF396C01} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
 		{5D78D837-1945-4D13-A291-7F246176CDCB} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
 		{93A2E541-94E2-498E-93FD-A8114C7C0094} = {4C535693-9A79-422D-BE80-3D45458A0925}
+		{739CCA69-207B-4305-88E4-C75D0C285C6A} = {EDB98445-501E-48DE-B91F-5DC86F32734A}
 	EndGlobalSection
 EndGlobal

@@ -3,6 +3,7 @@ using RaqNRollPlayground.Infra.Configuration;
 using RaqNRollPlayground.Infra.Context;
 using RaqNRollPlayground.Infra.Seeders;
 using RaqNRollPlayground.Middlewares;
+using RaqNRollPlaygroung.WideEvent;
 using ReqNRollPlayground.Domain.RequestContext;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +34,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.UseMiddleware<RequestContextMiddleware>();
+app.UseMiddleware<WideEventMiddleware>();
 
 app.MapControllers();
 

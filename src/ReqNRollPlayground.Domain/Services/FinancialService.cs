@@ -1,4 +1,5 @@
-﻿using ReqNRollPlayground.Domain.DTOs;
+﻿using RaqNRollPlaygroung.WideEvent;
+using ReqNRollPlayground.Domain.DTOs;
 using ReqNRollPlayground.Domain.Entity;
 using ReqNRollPlayground.Domain.RequestContext;
 
@@ -46,13 +47,11 @@ public class FinancialService : IFinancialService
 
     public async Task<OutcomeSummaryReportDto> GetOutcomeSummaryAsync(string period)
     {
-        
-        var periodContext = _requestContext.Period;
-        
         var outcomes = await _repository.GetOutcomesByPeriodAsync(period);
-
+        
         if (!outcomes.Any())
         {
+            WideEvent.Current?.Add("report.outcome_summary.empty", true);
             return new OutcomeSummaryReportDto
             {
                 Period = period,
@@ -65,6 +64,8 @@ public class FinancialService : IFinancialService
         }
 
         var totalOutcomes = outcomes.Sum(o => o.Amount);
+        WideEvent.Current?.Add("report.outcome_summary.total", totalOutcomes);
+        
         var outcomesByCategory = outcomes
             .GroupBy(o => o.Category)
             .Select(g => new OutcomeByCategodyDto
@@ -76,7 +77,9 @@ public class FinancialService : IFinancialService
             })
             .OrderByDescending(o => o.Total)
             .ToList();
-
+        
+        WideEvent.Current?.Add("report.outcome_by_category", outcomesByCategory.Count);
+        
         var latestOutcomes = outcomes
             .OrderByDescending(o => o.OutcomeDate)
             .Take(5)
@@ -90,7 +93,9 @@ public class FinancialService : IFinancialService
                 Notes = o.Notes
             })
             .ToList();
-
+        
+        WideEvent.Current?.Add("report.latestOutcomes", latestOutcomes.Count);
+        
         return new OutcomeSummaryReportDto
         {
             Period = period,
